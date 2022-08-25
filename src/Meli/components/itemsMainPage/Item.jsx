@@ -4,7 +4,7 @@ import { AiFillThunderbolt } from "react-icons/ai";
 import cora from './img/cora.png'
 
 
-export const Item = () => {  
+export const Item = ({imagen,precio,envio,paragraf}) => {  
         const color ={
             fill: "#00a650",
             height: "22px",
@@ -15,31 +15,31 @@ export const Item = () => {
     <>
     <ItemContainer>
         <ItemWrapper>
-            <Item1>
+            <Item1 >
                 <ItemContainerDivAImg>
                     <ItemContainerA>
                         <ButtonItem>
                             <ButtonItemSvg src={cora}/>
                        </ButtonItem>
-                        <ItemContainerImg src='	https://http2.mlstatic.com/D_Q_NP_871808-MLA49384762009_032022-AB.webp'/>
+                        <ItemContainerImg src={imagen} />
                     </ItemContainerA>
                 </ItemContainerDivAImg>
                 <ItemContenido>
                     <ItemPrice>
                         <ItemSpanPrice>
-                            23.000$
+                            {precio}
                         </ItemSpanPrice>
                     </ItemPrice>
                     <ItemSpanContain>
                         <ItemFull>
-                            Envio Gratis
+                           {envio? 'Envio gratis':''}
                         </ItemFull>
                         
                         <AiFillThunderbolt style={color} />                       
 
                     </ItemSpanContain>
                     <ItemParagraph data-descr="small popups that appear when hovering">
-                    small popups that appear when hovering
+                    {paragraf}
                     </ItemParagraph>
                     
                 </ItemContenido>
